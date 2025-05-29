@@ -5,6 +5,8 @@ import org.json.JSONObject;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
+
+
 public class RestaurantGUI extends JFrame {
     
     private static final String API_KEY = "AIzaSyA6-T4EZ2TnGfLvIEma89qj7DncsKL4szE";
@@ -108,7 +110,6 @@ public class RestaurantGUI extends JFrame {
             JPanel restaurantPanel = new JPanel();
             restaurantPanel.setLayout(new BoxLayout(restaurantPanel, BoxLayout.Y_AXIS));
             restaurantPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            
 
             
             restaurantPanel.add(new JLabel(count + "."));
