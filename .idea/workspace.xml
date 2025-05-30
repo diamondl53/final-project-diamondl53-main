@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e7f4c947-514c-4660-b561-f4e55b6b5595" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/gdal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/gluegen-rt-natives-linux-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/gluegen-rt-natives-macosx-universal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/gluegen-rt-natives-windows-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/gluegen-rt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/jogl-all-natives-linux-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/jogl-all-natives-macosx-universal.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/jogl-all-natives-windows-amd64.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/jogl-all.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/junit-4.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/vpf-symbols.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/worldwind.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/lib/worldwindx.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaAPIProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/src/main/Api.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/src/main/Restaurant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/src/main/java/com/example/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/src/main/java/com/example/GlobeSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/src/test/java/com/example/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/target/classes/com/example/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/target/classes/com/example/GlobeSelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/target/classes/com/example/RestaurantGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaAPIProject/target/classes/com/example/RestaurantGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaAPIProject/target/test-classes/com/example/AppTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2xocYzJfTCDEZzlFKzX8O2YtpKi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/janeling/Desktop/final-project-diamondl53-main"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7f4c947-514c-4660-b561-f4e55b6b5595" name="Changes" comment="" />
+      <created>1748607918170</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748607918170</updated>
+    </task>
+    <servers />
+  </component>
+</project>

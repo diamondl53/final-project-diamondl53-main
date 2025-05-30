@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Api",
+            "request": "launch",
+            "mainClass": "com.example.Api",
+            "projectName": "JavaAPIProject"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

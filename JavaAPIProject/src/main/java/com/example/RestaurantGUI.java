@@ -5,6 +5,8 @@ import org.json.JSONObject;
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.io.*;
 
 
 public class RestaurantGUI extends JFrame {
@@ -15,6 +17,10 @@ public class RestaurantGUI extends JFrame {
     private JPanel mainPanel, inputPanel, resultPanel;
     private JComboBox<String> cuisineBox;
     private JTextField latField, lonField;
+    private java.util.List<String> savedRestaurants;
+    private static final String SAVE_FILE = "saved_restaurants.txt";
+
+
     
     public RestaurantGUI() {
         setTitle("RESTAURANT RECOMMENDER");
@@ -25,7 +31,8 @@ public class RestaurantGUI extends JFrame {
         UIManager.put("ComboBox.font", new Font("Comic Sans MS", Font.PLAIN, 17));
         UIManager.put("TextField.font", new Font("Comic Sans MS", Font.PLAIN, 17));
 
-        
+        savedRestaurants = new ArrayList<>();
+        loadSavedRestaurantsFromFile();
         
         mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
@@ -67,6 +74,17 @@ public class RestaurantGUI extends JFrame {
             }
         });
         mainPanel.add(searchButton);
+
+        // Save restaurant button
+JButton saveButton = new JButton("Save Restaurant");
+saveButton.addActionListener(e -> showSaveDialog());
+mainPanel.add(saveButton);
+
+// View saved restaurants button
+JButton viewSavedButton = new JButton("View Saved Restaurants");
+viewSavedButton.addActionListener(e -> showSavedRestaurants());
+mainPanel.add(viewSavedButton);
+
         
         // Results panel
         resultPanel = new JPanel();
@@ -75,6 +93,86 @@ public class RestaurantGUI extends JFrame {
         JScrollPane scrollPane = new JScrollPane(resultPanel);
         mainPanel.add(scrollPane);
     }
+
+    private void showSaveDialog() {
+    JTextField nameField = new JTextField();
+    JTextField addressField = new JTextField();
+    JTextField cuisineField = new JTextField();
+
+    JPanel panel = new JPanel(new GridLayout(0, 1));
+    panel.add(new JLabel("Restaurant Name:"));
+    panel.add(nameField);
+    panel.add(new JLabel("Address:"));
+    panel.add(addressField);
+    panel.add(new JLabel("Cuisine:"));
+    panel.add(cuisineField);
+
+    int result = JOptionPane.showConfirmDialog(this, panel, "Save Restaurant",
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+    if (result == JOptionPane.OK_OPTION) {
+        String entry = "Name: " + nameField.getText().trim() + "\n" +
+                       "Address: " + addressField.getText().trim() + "\n" +
+                       "Cuisine: " + cuisineField.getText().trim();
+        savedRestaurants.add(entry);
+        saveRestaurantToFile(entry);
+        JOptionPane.showMessageDialog(this, "Restaurant saved!");
+    }
+}
+
+private void showSavedRestaurants() {
+    if (savedRestaurants.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "No saved restaurants.");
+        return;
+    }
+
+    JTextArea textArea = new JTextArea();
+    for (String entry : savedRestaurants) {
+        textArea.append(entry + "\n\n");
+    }
+    textArea.setEditable(false);
+    textArea.setFont(new Font("Comic Sans MS", Font.PLAIN, 14));
+
+    JScrollPane scrollPane = new JScrollPane(textArea);
+    scrollPane.setPreferredSize(new Dimension(500, 300));
+    JOptionPane.showMessageDialog(this, scrollPane, "Saved Restaurants", JOptionPane.INFORMATION_MESSAGE);
+}
+
+private void saveRestaurantToFile(String entry) {
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(SAVE_FILE, true))) {
+        writer.write(entry);
+        writer.write("\n===\n"); // separator
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Failed to save to file.");
+        e.printStackTrace();
+    }
+}
+
+private void loadSavedRestaurantsFromFile() {
+    File file = new File(SAVE_FILE);
+    if (!file.exists()) return;
+
+    try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+        StringBuilder sb = new StringBuilder();
+        String line;
+        while ((line = reader.readLine()) != null) {
+            if (line.equals("===")) {
+                savedRestaurants.add(sb.toString().trim());
+                sb.setLength(0);
+            } else {
+                sb.append(line).append("\n");
+            }
+        }
+        if (sb.length() > 0) {
+            savedRestaurants.add(sb.toString().trim());
+        }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Failed to load saved restaurants.");
+        e.printStackTrace();
+    }
+}
+
+
     
     private void searchRestaurants() throws Exception {
         String topRestaurant = "";
